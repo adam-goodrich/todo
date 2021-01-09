@@ -380,7 +380,6 @@ const projectsContainer = document.createElement("div");
 projectsContainer.classList.add("projectsContainer");
 mainContainer.appendChild(projectsContainer)
 
-
 const addProjectButton = document.createElement("button");
 addProjectButton.classList.add("addProjectButton");
 addProjectButton.innerHTML = "+ New Project"
