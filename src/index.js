@@ -192,7 +192,7 @@ function removeAllChildNodes(parent) {
     }
 };
 
-function setDueDate() {
+function setDueDate(i) {
     if (projectsList[i].completed == false) {
         if (projectsList[i].dueDate == "") {
             completedBool = `Incomplete`
@@ -236,25 +236,7 @@ function drawMenu() {
         }
         newProject.appendChild(projectTitle)
 
-        if (projectsList[i].completed == false) {
-            if (projectsList[i].dueDate == "") {
-                completedBool = `Incomplete`
-            } else {
-                let result = differenceInCalendarDays(new Date(projectsList[i].dueDate), new Date());
-                result += 1
-                if (result == 1) {
-                    completedBool = `Due Tomorrow`;
-                } else if (result == 0) {
-                    completedBool = `Due Today`;
-                } else if (result < 0){
-                    completedBool = `Past Due!`;
-                } else {
-                    completedBool = `Due in ${result} Days`;
-                }
-            }
-        } else {
-            completedBool = "COMPLETED!"
-        }
+        setDueDate(i)
     
         let projectPriority = document.createElement("p");
         projectPriority.classList.add("projectPriority");
@@ -406,25 +388,7 @@ function drawMenu() {
                 projectsList[i].completed = false;
                 completedButton.innerHTML = `Mark Project As Complete`
         
-                if (projectsList[i].completed == false) {
-                    if (projectsList[i].dueDate == "") {
-                        completedBool = `Incomplete`
-                    } else {
-                        let result = differenceInCalendarDays(new Date(projectsList[i].dueDate), new Date());
-                        result += 1
-                        if (result == 1) {
-                            completedBool = `Due Tomorrow`;
-                        } else if (result == 0) {
-                            completedBool = `Due Today`;
-                        } else if (result < 0){
-                            completedBool = `Past Due!`;
-                        } else {
-                            completedBool = `Due in ${result} Days`;
-                        }
-                    }
-                } else {
-                    completedBool = "COMPLETED!"
-                }
+                setDueDate(i)
         
                 projectPriority.innerHTML = `${completedBool}`   
                 checklistContainer.style.display = "block"  
