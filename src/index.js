@@ -12,6 +12,7 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 function addProjectModal() {
+    
     const modalWindow = document.createElement("div");
     modalWindow.classList.add("modalWindow");
     projectsContainer.appendChild(modalWindow)
@@ -205,7 +206,6 @@ function drawMenu() {
         newProject.appendChild(checklistContainer)
 
         function drawCheckList () {
-
             // this will sort checklist items by priority 1-high, 2-med, 3-low
             projectsList[i].checklistItemList.sort((a,b) => (a.checklistItemIsCompleted > b.checklistItemIsCompleted) ? 1 : ((b.checklistItemIsCompleted > a.checklistItemIsCompleted) ? -1 : 0))
 
@@ -235,6 +235,7 @@ function drawMenu() {
             let checklistinputbreak = document.createElement("br");
             checklistContainer.appendChild(checklistinputbreak)
 
+            
             for (let j = 0; j < projectsList[i].checklistItemList.length; j++) {
                 let checklistItemContainer = document.createElement("div");
                 checklistItemContainer.classList.add("checklistItemContainer");
@@ -379,6 +380,7 @@ for (let i = 0; i < tempItemList.length; i++) {
 const projectsContainer = document.createElement("div");
 projectsContainer.classList.add("projectsContainer");
 mainContainer.appendChild(projectsContainer)
+
 
 const addProjectButton = document.createElement("button");
 addProjectButton.classList.add("addProjectButton");
