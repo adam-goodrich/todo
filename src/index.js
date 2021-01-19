@@ -135,6 +135,169 @@ function addProjectModal() {
     }
 }
 
+function editProjectModal(i) {
+    
+    const modalWindow = document.createElement("div");
+    modalWindow.classList.add("modalWindow");
+    projectsContainer.appendChild(modalWindow)
+
+    const projectForm = document.createElement("div");
+    projectForm.classList.add("projectForm");
+    modalWindow.appendChild(projectForm)
+
+    const projectNameInputTitle = document.createElement("label");
+    projectNameInputTitle.classList.add("projectNameInputTitle");
+    projectNameInputTitle.innerHTML = "Project Name";
+    projectNameInputTitle.htmlFor = "projectName"
+    projectForm.appendChild(projectNameInputTitle)
+
+    const projectNameInput = document.createElement("input");
+    projectNameInput.classList.add("projectNameInput");
+    projectNameInput.type = "text"
+    projectNameInput.id = "projectName";
+    projectNameInput.value = projectsList[i].projectName
+    console.log(projectsList[i].projectName)
+    projectForm.appendChild(projectNameInput)
+
+    let projectNameInputbreak1 = document.createElement("br");
+    projectForm.appendChild(projectNameInputbreak1)
+    let projectNameInputbreak2 = document.createElement("br");
+    projectForm.appendChild(projectNameInputbreak2)
+
+    const projectPriorityInputTitle = document.createElement("label");
+    projectPriorityInputTitle.classList.add("projectPriorityInputTitle");
+    projectPriorityInputTitle.innerHTML = "Project Priority";
+    projectForm.appendChild(projectPriorityInputTitle)
+
+    const projectPriorityInput = document.createElement("select");
+    projectPriorityInput.classList.add("projectPriorityInput");
+    projectPriorityInput.id = "projectPriorityInput"
+    projectForm.appendChild(projectPriorityInput)
+
+    let projectPriorityInputbreak1 = document.createElement("br");
+    projectForm.appendChild(projectPriorityInputbreak1)
+    let projectPriorityInputbreak2 = document.createElement("br");
+    projectForm.appendChild(projectPriorityInputbreak2)
+
+    if (projectsList[i].projectPriority == 1) {
+        const highPriorityOption = document.createElement("option");
+        highPriorityOption.value = 1;
+        highPriorityOption.innerHTML = "High"
+        projectPriorityInput.append(highPriorityOption)
+    
+        const medPriorityOption = document.createElement("option");
+        medPriorityOption.value = 2;
+        medPriorityOption.innerHTML = "Medium"
+        projectPriorityInput.append(medPriorityOption)
+    
+        const lowPriorityOption = document.createElement("option");
+        lowPriorityOption.value = 3;
+        lowPriorityOption.innerHTML = "Low"
+        projectPriorityInput.append(lowPriorityOption)
+    } else if (projectsList[i].projectPriority == 2) {
+        const medPriorityOption = document.createElement("option");
+        medPriorityOption.value = 2;
+        medPriorityOption.innerHTML = "Medium"
+        projectPriorityInput.append(medPriorityOption)
+
+        const highPriorityOption = document.createElement("option");
+        highPriorityOption.value = 1;
+        highPriorityOption.innerHTML = "High"
+        projectPriorityInput.append(highPriorityOption)
+
+        const lowPriorityOption = document.createElement("option");
+        lowPriorityOption.value = 3;
+        lowPriorityOption.innerHTML = "Low"
+        projectPriorityInput.append(lowPriorityOption)
+    
+    } else {
+        const lowPriorityOption = document.createElement("option");
+        lowPriorityOption.value = 3;
+        lowPriorityOption.innerHTML = "Low"
+        projectPriorityInput.append(lowPriorityOption)
+
+        const highPriorityOption = document.createElement("option");
+        highPriorityOption.value = 1;
+        highPriorityOption.innerHTML = "High"
+        projectPriorityInput.append(highPriorityOption)
+
+        const medPriorityOption = document.createElement("option");
+        medPriorityOption.value = 2;
+        medPriorityOption.innerHTML = "Medium"
+        projectPriorityInput.append(medPriorityOption)
+    }
+
+
+
+    const projectNotesInputTitle = document.createElement("label");
+    projectNotesInputTitle.classList.add("projectNotesInputTitle");
+    projectNotesInputTitle.innerHTML = "Project Description ";
+    projectNotesInputTitle.htmlFor = "projectNotes"
+    projectForm.appendChild(projectNotesInputTitle)
+
+    const projectNotesInput = document.createElement("input");
+    projectNotesInput.classList.add("projectNotesInput");
+    projectNotesInput.type = "text"
+    projectNotesInput.id = "projectNotes";
+    projectNotesInput.value = projectsList[i].projectNotes
+    projectForm.appendChild(projectNotesInput)
+
+    let breakNotes1 = document.createElement("br");
+    projectForm.appendChild(breakNotes1)
+    let breakNotes2 = document.createElement("br");
+    projectForm.appendChild(breakNotes2)
+
+    const projectDateTitle = document.createElement("label");
+    projectDateTitle.classList.add("projectDateTitle");
+    projectDateTitle.innerHTML = "Due Date";
+    projectDateTitle.htmlFor = "projectNotes"
+    projectForm.appendChild(projectDateTitle)
+
+    const projectDateInput = document.createElement("input");
+    projectDateInput.classList.add("projectNotesInput");
+    projectDateInput.type = "date"
+    projectDateInput.id = "projectDate";
+    projectDateInput.value = projectsList[i].dueDate
+    projectForm.appendChild(projectDateInput)
+
+    let projectDateInputbreak1 = document.createElement("br");
+    projectForm.appendChild(projectDateInputbreak1)
+    let projectDateInputbreak2 = document.createElement("br");
+    projectForm.appendChild(projectDateInputbreak2)
+
+    const saveButton = document.createElement("button");
+    saveButton.innerHTML = "Save";
+    saveButton.classList.add("saveButton")
+    projectForm.appendChild(saveButton)
+    saveButton.addEventListener("click", () => {
+        let projectName = document.getElementById("projectName").value;
+        let projectPriority = document.getElementById("projectPriorityInput").value;
+        let projectNotes = document.getElementById("projectNotes").value;
+        let dueDate = document.getElementById("projectDate").value;
+        let completed = false
+        let newProject = ProjectItem(projectName, projectNotes, projectPriority, completed, dueDate)
+        for (let j = 0; j < projectsList[i].checklistItemList.length; j++) {
+            newProject.checklistItemList.push(projectsList[i].checklistItemList[j])
+        }
+        projectsList.splice(i, 1, newProject)
+        removeAllChildNodes(projectsContainer)
+        drawMenu()
+    })
+
+    if (projectsList.length == 0) {
+        //pass
+    } else {
+        const cancelButton = document.createElement("button");
+        cancelButton.innerHTML = "Cancel";
+        cancelButton.classList.add("cancelButton")
+        projectForm.appendChild(cancelButton)
+        cancelButton.addEventListener("click", () => {
+            removeAllChildNodes(projectsContainer)
+            drawMenu()
+        })
+    }
+}
+
 function drawMenu() {
 
     function setDueDate(i) {
@@ -335,6 +498,7 @@ function drawMenu() {
                 window.localStorage.setItem(`item${i}`, JSON.stringify(projectsList[i]));
                 completeButtonFunction()
                 deleteTodoItem()
+                editProjectButton()
             });
         }
 
@@ -352,6 +516,20 @@ function drawMenu() {
         }
 
         deleteTodoItem()
+
+        function editProjectButton() {
+            let editProjectButton = document.createElement("button");
+            editProjectButton.classList.add("editProjectButton");
+            editProjectButton.innerHTML = `Edit Project`
+            editProjectButton.id = i
+            dropDownButton.appendChild(editProjectButton)
+            editProjectButton.addEventListener("click", () => {
+                removeAllChildNodes(projectsContainer)
+                editProjectModal(i)
+            });
+        }
+
+        editProjectButton()
         
     }
     if (projectsList.length == 0) {
