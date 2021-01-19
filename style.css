@@ -1,541 +1,632 @@
-
 :root {
-    --sidebar-background: #9b9495;
-    --header-background: #efb08c;
-    --mainViewingWindow-background: white;
-    --header-text-color: black;
-    --high-priority: rgb(250, 110, 110);
-    --medium-priority: rgb(252, 252, 147);
-    --low-priority: rgb(147, 224, 147);
-    --dropdown-button: white;
+  --sidebar-background: #9b9495;
+  --header-background: #efb08c;
+  --mainViewingWindow-background: white;
+  --header-text-color: black;
+  --high-priority: rgb(250, 110, 110);
+  --medium-priority: rgb(252, 252, 147);
+  --low-priority: rgb(147, 224, 147);
+  --dropdown-button: white;
 }
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
-    font-family: 'Roboto', sans-serif;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    line-height:1;
-    overflow: scroll;
-
+  line-height: 1;
+  overflow: scroll;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 nav ul {
-    list-style:none;
+  list-style: none;
 }
 
-blockquote, q {
-    quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;  
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-input, select {
-    vertical-align:middle;
+input,
+select {
+  vertical-align: middle;
 }
-
 
 .titleCard {
-    background-color: var(--header-background);
-    height: 120px;
-    width: 100%;
-    min-width: 500px;
-    top: 0;
-    border-bottom: 3px solid black;
-    text-align: center;
-    padding: 20px 0;
-    color: var(--header-text-color);
-    font-size: 25px;
+  background-color: var(--header-background);
+  height: 120px;
+  width: 100%;
+  min-width: 500px;
+  top: 0;
+  border-bottom: 3px solid black;
+  text-align: center;
+  padding: 20px 0;
+  color: var(--header-text-color);
+  font-size: 25px;
 }
 
 .titleHeader {
-    font-size: 40px;
-    margin: 10px;
+  font-size: 40px;
+  margin: 10px;
 }
 
-
 .projectsContainer {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    min-width: 500px;
-    background-color: var(--sidebar-background);
-    text-align: center;
-    font-size: 20px;
-    min-height: 100vh;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  min-width: 500px;
+  background-color: var(--sidebar-background);
+  text-align: center;
+  font-size: 20px;
+  min-height: 100vh;
 }
 
 .project {
-    background-color: white;   
-    width: 80%;
-    min-width: 450px;
-    border: 3px solid black;
-    margin: auto;
-    margin-top: 25px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 20px 5px rgb(66, 66, 66) ; 
-
+  background-color: white;
+  width: 80%;
+  min-width: 450px;
+  border: 3px solid black;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px 5px rgb(66, 66, 66);
 }
 
 .projectTitleHigh {
-    font-size: 25px;
-    border-bottom: 3px solid black;
-    text-align: center;
-    padding: 20px;
-    background-color: var(--high-priority);
-    border-radius: 6px 6px 0 0;
+  font-size: 25px;
+  border-bottom: 3px solid black;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--high-priority);
+  border-radius: 6px 6px 0 0;
 }
 
 .projectTitleMed {
-    font-size: 25px;
-    border-bottom: 3px solid black;
-    text-align: center;
-    padding: 20px;
-    background-color: var(--medium-priority);
-    border-radius: 6px 6px 0 0;
-
+  font-size: 25px;
+  border-bottom: 3px solid black;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--medium-priority);
+  border-radius: 6px 6px 0 0;
 }
 
 .projectTitleLow {
-    font-size: 25px;
-    border-bottom: 3px solid black;
-    text-align: center;
-    padding: 20px;
-    background-color: var(--low-priority);
-    border-radius: 6px 6px 0 0;
-
+  font-size: 25px;
+  border-bottom: 3px solid black;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--low-priority);
+  border-radius: 6px 6px 0 0;
 }
 
 .projectNotes {
-    border-bottom: 3px solid black;
-    padding: 15px;
-    font-size: 20px;
-    text-align: center;
-    height: fit-content;
-    text-overflow: wrap;
-    word-break: break-all;
+  border-bottom: 3px solid black;
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  height: fit-content;
+  text-overflow: wrap;
+  word-break: break-all;
 }
 
 .projectPriority {
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
-    padding: 15px;
-    text-align: center;
-    font-size: 25px;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+  padding: 15px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .checklistContainer {
-    padding: 10px;
-    display: block;
-
+  padding: 10px;
+  display: block;
 }
 
 .checklistItemContainer {
-    background-color: rgb(238, 237, 237);
-    font-size: 20px;
-    text-align: left;
-    margin: 15px;
-    border-radius: 10px;
-    padding: 10px;
-    border: 1px solid black;
-    box-shadow: 5px 5px 10px 3px rgb(66, 66, 66) ; 
-
-
+  background-color: rgb(238, 237, 237);
+  font-size: 20px;
+  text-align: left;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 10px 3px rgb(66, 66, 66);
 }
 
 .checklistItemName {
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 18px;
-    padding-bottom: 20px;
-    margin: 10px;
-    cursor: pointer;
-    border: 1px solid black;
-    line-height: 1.6;
-    box-shadow: 1px 3px #666;
-
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 10px;
+  padding-top: 18px;
+  padding-bottom: 20px;
+  margin: 10px;
+  cursor: pointer;
+  border: 1px solid black;
+  line-height: 1.6;
+  box-shadow: 1px 3px #666;
 }
 
-
 .checkListItemNameLine {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .mainViewingWindow {
-    height: 100vh;
-    margin-left: 253px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-    background-color: var(--mainViewingWindow-background);
-    border: 3px solid black
+  height: 100vh;
+  margin-left: 253px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  background-color: var(--mainViewingWindow-background);
+  border: 3px solid black;
 }
 
 .dropDownButton {
-    height: fit-content;
-    text-align: center;
-    padding: 10px 0 15px 0;
-    font-size: 35px;
-    background-color: var(--dropdown-button);
-    border-radius: 0 0 18px 18px;
-    border-top: 3px solid black;
+  height: fit-content;
+  text-align: center;
+  padding: 10px 0 15px 0;
+  font-size: 35px;
+  background-color: var(--dropdown-button);
+  border-radius: 0 0 18px 18px;
+  border-top: 3px solid black;
 }
 
 .completedButton {
-    width: 230px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;    
-    border: 1px solid black;
-    box-shadow: 1px 3px #666;
-    outline: none;
-
+  width: 230px;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  border: 1px solid black;
+  box-shadow: 1px 3px #666;
+  outline: none;
 }
 
 .completedButton:hover {
-    background-color: #419644;
-
+  background-color: #419644;
 }
 
 .completedButton:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
 }
 
 .deleteButton {
-    width: 230px;
-    background-color: #c70606;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;    
-    box-shadow: 1px 3px #666;
-    outline: none;            
-    border: 1px solid black;
+  width: 230px;
+  background-color: #c70606;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 1px 3px #666;
+  outline: none;
+  border: 1px solid black;
 }
 
 .deleteButton:hover {
-    background-color: #aa0101;
-
+  background-color: #aa0101;
 }
 
 .deleteButton:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
 }
 
 .editProjectButton {
-    width: 230px;
-    background-color: #0680c7;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;    
-    box-shadow: 1px 3px #666;
-    outline: none;            
-    border: 1px solid black;
+  width: 230px;
+  background-color: #0680c7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 1px 3px #666;
+  outline: none;
+  border: 1px solid black;
 }
 
 .editProjectButton:hover {
-    background-color: #026daa;
-
+  background-color: #026daa;
 }
 
 .deleteButton:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
 }
 
 .addProjectButton {
-    font-size: 15px;
-    background-color: white;   
-    width: 150px;
-    height: 50px;
-    border: 3px solid black;
-    margin: 12px;
-    border-radius: 20px;
-    box-shadow: 1px 3px;
-    outline: none;
-    cursor: pointer;
-    
+  font-size: 15px;
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 3px solid black;
+  margin: 12px;
+  border-radius: 20px;
+  box-shadow: 1px 3px;
+  outline: none;
+  cursor: pointer;
 }
 
 .addProjectButton:hover {
-    background-color: rgb(245, 245, 245);   
+  background-color: rgb(245, 245, 245);
 }
 
 .addProjectButton:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
+  box-shadow: 0 2px #666;
+  transform: translateY(2px);
 }
 
 .addProjectMenu {
-    width: 95%;
-    border: 3px solid black;
-    border-radius: 20px;
-    margin: auto;
-    margin-top: 30px;
-    padding: 10px;
+  width: 95%;
+  border: 3px solid black;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 10px;
 }
 
 .modalWindow {
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    border: 3px solid black;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    box-shadow: 3px 5px;
-
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-shadow: 3px 5px;
 }
 
 .projectForm {
-    min-height: 20vh;
-    margin: 20px;
-    width: 80%;
-
+  min-height: 20vh;
+  margin: 20px;
+  width: 80%;
 }
 
 .projectNameInputTitle {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .projectDateTitle {
-    margin-top: 30px;
-
+  margin-top: 30px;
 }
 
-.projectNameInput, .projectNotesInput, select, .projectDateInput {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 10px 0;
-    display: inline-block;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
-    text-align: left;
-    font-size: 16px;
+.projectNameInput,
+.projectNotesInput,
+select,
+.projectDateInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 16px;
 }
 
 .addChecklistItem {
-    width: 40%;
-    padding: 5px 20px;
-    border: 0;
-    outline: 0;
-    background: transparent;
-    border-bottom: 1px solid black;
-    box-sizing: border-box;
-    font-size: 20px;
-    margin-right: 65px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  width: 40%;
+  padding: 5px 20px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  font-size: 20px;
+  margin-right: 65px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
-    float: center;
+  float: center;
 }
 
 .saveButton {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .saveButton:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .cancelButton {
-    width: 100%;
-    background-color: #c70606;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-
+  width: 100%;
+  background-color: #c70606;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
 }
 
 .cancelButton:hover {
-    background-color: #9b0404;
+  background-color: #9b0404;
 }
 
 .addChecklistItemButton {
-    background-color: rgb(231, 231, 231);
-    padding: 10px 15px;
-    border: none;
-    margin-right: 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-    border-radius: 50%;
-    float: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
+  background-color: rgb(231, 231, 231);
+  padding: 10px 15px;
+  border: none;
+  margin-right: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 50%;
+  float: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .addChecklistItemButton:hover {
-    background-color: rgb(212, 212, 212);
+  background-color: rgb(212, 212, 212);
 }
 
 .addChecklistItemTitle {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .checklistDeleteButton {
-    float: center;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 12px;
-    background-color: #c70606;
-    color: white;            
-    outline: none;
-    box-shadow: 1px 3px #666;
-    outline: none;               
-    width: fit-content;
-    padding: 10px;
-    margin: 10px;;
-    margin-left: 45px;
-
+  float: center;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 12px;
+  background-color: #c70606;
+  color: white;
+  outline: none;
+  box-shadow: 1px 3px #666;
+  outline: none;
+  width: fit-content;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 45px;
 }
 
 .checklistDeleteButton:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(.5px);
+  box-shadow: 0 2px #666;
+  transform: translateY(0.5px);
 }
 
 .checklistDeleteButton:hover {
-    background-color: #9b0404;
+  background-color: #9b0404;
 }
 
 @media screen and (device-aspect-ratio: 2/3) {
-    select, textarea, input[type="text"], input[type="password"],
-    input[type="datetime"], input[type="datetime-local"],
-    input[type="date"], input[type="month"], input[type="time"],
-    input[type="week"], input[type="number"], input[type="email"],
-    input[type="url"]{ font-size: 16px; }
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
 }
 
 /* iPhone 5, 5C, 5S, iPod Touch 5g */
 @media screen and (device-aspect-ratio: 40/71) {
-    select, textarea, input[type="text"], input[type="password"],
-    input[type="datetime"], input[type="datetime-local"],
-    input[type="date"], input[type="month"], input[type="time"],
-    input[type="week"], input[type="number"], input[type="email"],
-    input[type="url"]{ font-size: 16px; }
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
 }
 
 /* iPhone 6, iPhone 6s, iPhone 7 portrait/landscape */
 @media screen and (device-aspect-ratio: 375/667) {
-    select, textarea, input[type="text"], input[type="password"],
-    input[type="datetime"], input[type="datetime-local"],
-    input[type="date"], input[type="month"], input[type="time"],
-    input[type="week"], input[type="number"], input[type="email"],
-    input[type="url"]{ font-size: 16px; }
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
 }
 
 /* iPhone 6 Plus, iPhone 6s Plus, iPhone 7 Plus portrait/landscape */
 @media screen and (device-aspect-ratio: 9/16) {
-    select, textarea, input[type="text"], input[type="password"],
-    input[type="datetime"], input[type="datetime-local"],
-    input[type="date"], input[type="month"], input[type="time"],
-    input[type="week"], input[type="number"], input[type="email"],
-    input[type="url"]{ font-size: 16px; }
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"] {
+    font-size: 16px;
+  }
 }
