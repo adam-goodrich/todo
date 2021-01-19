@@ -305,6 +305,31 @@ input, select {
     transform: translateY(2px);
 }
 
+.editProjectButton {
+    width: 230px;
+    background-color: #0680c7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;    
+    box-shadow: 1px 3px #666;
+    outline: none;            
+    border: 1px solid black;
+}
+
+.editProjectButton:hover {
+    background-color: #026daa;
+
+}
+
+.deleteButton:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
 .addProjectButton {
     font-size: 15px;
     background-color: white;   
