@@ -60,7 +60,7 @@ function drawMenu() {
     setDueDate(i);
 
     let projectPriority = document.createElement("p");
-    projectPriority.classList.add("projectPriority.");
+    projectPriority.classList.add("projectPriority");
     projectPriority.innerHTML = `${completedBool}`;
     newProject.appendChild(projectPriority);
 
